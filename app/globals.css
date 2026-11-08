@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #648c48;
+  --green-dark: #0c2f21;
+  --green-deep: #133f2b;
+  --yellow: #fbcf0e;
+  --red: #e82127;
+  --blue: #17b0e2;
+  --ink: #1a2214;
+  --text: #2b3326;
+  --muted: #5f6b58;
+  --bg: #f7f5ec;
+  --card: #ffffff;
+  --radius: 20px;
+  --shadow: 0 10px 30px rgba(12, 47, 33, 0.10);
+  --shadow-lg: 0 20px 50px rgba(12, 47, 33, 0.18);
+  --font: "Hind Siliguri", "Noto Sans Bengali", system-ui, sans-serif;
+  --font-display: "Tiro Bangla", "Hind Siliguri", serif;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f5ec;
+}
+::-webkit-scrollbar-thumb {
+  background: #0c2f21;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #133f2b;
+}
+
+/* Print Styles for ID Card & Receipts */
+@media print {
+  body {
+    background: white;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* =============================================
+   CINEMATIC SCENE ANIMATIONS & KEYFRAMES
+   ============================================= */
+
+/* 1. Logo Floating Up & Down inside Circle */
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+/* 2. Rotating Rings */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  100% { transform: rotate(-360deg); }
+}
+
+/* 3. Rising Red Sun from the River */
+@keyframes sunriseFromRiver {
+  0% {
+    transform: translateY(320px) scale(0.7);
+    opacity: 0.15;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  70% {
+    transform: translateY(35px) scale(0.95);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 4. Morning Ambient Light Growth */
+@keyframes morningLightExpansion {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.15;
+  }
+  40% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Sun Glow pulse */
+@keyframes glow {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+
+/* 5. Moving Bullock Carts along Rural Road */
+@keyframes cartMove1 {
+  0% {
+    transform: translate(-200px, 722px);
+  }
+  100% {
+    transform: translate(1620px, 702px);
+  }
+}
+
+@keyframes cartMove2 {
+  0% {
+    transform: translate(-450px, 722px);
+  }
+  100% {
+    transform: translate(1620px, 702px);
+  }
+}
+
+@keyframes wheelSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes cartBounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2.5px); }
+}
+
+/* 6. River Flowing Current Streams */
+@keyframes riverCurrent {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -320px; }
+}
+
+/* 7. Boat Sailing across River */
+@keyframes sail {
+  0% { transform: translate(-120px, 770px); }
+  100% { transform: translate(1560px, 770px); }
+}
+
+/* 8. River Waves */
+@keyframes wave {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-120px); }
+}
+
+@keyframes wave2 {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-160px); }
+}
+
+@keyframes wave3 {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-200px); }
+}
+
+/* 9. Bird Groups: 4 birds together across Sun, 1 lone bird, 2 companion birds with distance */
+@keyframes flyGroup4AcrossSun {
+  0% {
+    transform: translate(-220px, 440px);
+    opacity: 0;
+  }
+  3% {
+    opacity: 0.95;
+  }
+  97% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(1640px, 410px);
+    opacity: 0;
+  }
+}
+
+@keyframes flyLone1AcrossSky {
+  0% {
+    transform: translate(-150px, 360px);
+    opacity: 0;
+  }
+  3% {
+    opacity: 0.9;
+  }
+  97% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(1640px, 330px);
+    opacity: 0;
+  }
+}
+
+@keyframes flyPair2AcrossSun {
+  0% {
+    transform: translate(-180px, 490px);
+    opacity: 0;
+  }
+  3% {
+    opacity: 0.9;
+  }
+  97% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(1640px, 470px);
+    opacity: 0;
+  }
+}
+
+@keyframes wingFlapFast {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(-0.7) translateY(2px);
+  }
+}
+
+/* 10. Clouds Drifting across the Sky from one side to the other */
+@keyframes cloudDriftRight1 {
+  0% {
+    transform: translateX(-400px);
+  }
+  100% {
+    transform: translateX(1650px);
+  }
+}
+
+@keyframes cloudDriftRight2 {
+  0% {
+    transform: translateX(-350px);
+  }
+  100% {
+    transform: translateX(1650px);
+  }
+}
+
+@keyframes cloudDriftRight3 {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(1650px);
+  }
+}
+
+/* 11. Stars Twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* 12. Scroll Hint */
+@keyframes scroll {
+  0% { opacity: 0; transform: translateY(0px); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(14px); }
+}
+
+/* =============================================
+   BUTTONS & GENERAL UTILITIES
+   ============================================= */
+
+.demo-btn-primary {
+  background: linear-gradient(135deg, var(--yellow), #ffb200);
+  color: var(--ink);
+  box-shadow: rgba(251, 207, 14, 0.35) 0px 8px 24px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.demo-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(251, 207, 14, 0.45) 0px 14px 30px;
+}
+
+.demo-btn-ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+
+.demo-btn-ghost:hover {
+  background: rgb(255, 255, 255);
+  color: var(--green-dark);
+  transform: translateY(-2px);
+}

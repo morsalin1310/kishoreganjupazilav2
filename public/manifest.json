@@ -1,0 +1,24 @@
+{
+  "name": "কিশোরগঞ্জ উপজেলা সমিতি, ঢাকা (নীলফামারী)",
+  "short_name": "কিশোরগঞ্জ সমিতি নীলফামারী",
+  "description": "শেকড়ের টানে একতার বন্ধনে — নীলফামারী জেলার কিশোরগঞ্জ উপজেলা সমিতির অফিশিয়াল ওয়েব ও ডিজিটাল পোর্টাল।",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDFBF7",
+  "theme_color": "#0B3B2C",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
